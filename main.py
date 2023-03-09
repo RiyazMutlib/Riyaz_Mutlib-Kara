@@ -8,4 +8,4 @@ def encoder(digits):
             newdig = str((int(digits[i)) + 3))
       new_digits += newdig
 
-    return newdig
+    return newdigits
