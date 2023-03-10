@@ -1,15 +1,14 @@
+
 def encoder(digits):
-   new_digits = ''
-   new_dig =''
-   for i in range(0, len(digits)):
-      if int(digits[i]) >= 7:
-          newdig = str((int(digits[i])) + 3 - 10)
-      else:
-          newdig = str((int(digits[i]) + 3))
-      new_digits += newdig
-
-    return newdigits
-
+    new_digits = ''
+    new_dig = ''
+    for i in range(0, len(digits)):
+        if int(digits[i]) >= 7:
+            new_dig = str(int(digits[i]) - 7)
+        else:
+            new_dig = str(int(digits[i]) + 3)
+        new_digits = new_digits + new_dig
+    return new_digits
 
 if __name__ == "__main__":
     menu = True
