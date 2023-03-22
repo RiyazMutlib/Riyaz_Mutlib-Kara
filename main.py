@@ -22,8 +22,10 @@ def decode(digits): #subtracts 3 or adds 7 to each digit of the input and return
     return new_digits
 
 def main():
+    encoded_password = ''
     menu = True
-    while menu: #loop till user selects option 3
+    while menu:
+        #loop until user selects option 3
         password = ''
         print('Menu')
         print('-------------')
@@ -32,19 +34,19 @@ def main():
         print('3. Quit')
         print()
         option = int(input('Please enter an option: '))
-        if option == 1: #encodes password if option == 1
+        if option == 1:     #encodes password if option == 1
             password = input("Please enter your password to encode: ")
             if len(password) != 8:
                 print('Please enter an 8 digit password.')
             if len(password) == 8:
                 encoded_password = encode(password)
-                print("Your password has been encoded an stored!\n")
+                print("Your password has been encoded and stored!\n")
         elif option == 2: #decodes password and prints encoded and original password
-            if len(encoded_password) == 8:
+            if len(str(encoded_password)) != 8:
+                print("Please encode a password first.")
+            else:
                 decoded_password = decode(encoded_password)
                 print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.\n")
-            else:
-                print("Please encode a password first.")
         elif option == 3:
             menu = False
         else:
